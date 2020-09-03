@@ -21,7 +21,7 @@
 #include <assert.h>
 #include "enummap.h"
 
-ZhuyinAmbiguity2 FcitxZhuyinTransAmbiguity(FCITX_AMBIGUITY ambiguity)
+PinyinAmbiguity2 FcitxZhuyinTransAmbiguity(FCITX_AMBIGUITY ambiguity)
 {
     switch(ambiguity) {
         case FCITX_AMB_CiChi:
