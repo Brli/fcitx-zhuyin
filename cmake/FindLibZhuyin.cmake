@@ -16,8 +16,9 @@ if(LIBZHUYIN_INCLUDE_DIR AND LIBZHUYIN_LIBRARIES)
 endif(LIBZHUYIN_INCLUDE_DIR AND LIBZHUYIN_LIBRARIES)
 
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(PC_LIBZHUYIN "libzhuyin>=1.0.91")
+pkg_check_modules(PC_LIBZHUYIN "libzhuyin>=2.3.0")
 _pkgconfig_invoke("libzhuyin" PC_LIBZHUYIN LIBZHUYININCLUDEDIR "" "--variable=libzhuyinincludedir")
+_pkgconfig_invoke("libpinyin" LIBZHUYIN PKGDATADIR "" "--variable=pkgdatadir")
 _pkgconfig_invoke("libzhuyin" LIBZHUYIN EXECPREFIX "" "--variable=exec_prefix")
 
 find_path(LIBZHUYIN_INCLUDE_DIR
@@ -33,6 +34,7 @@ include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(LibZhuyin  DEFAULT_MSG
                                   LIBZHUYIN_LIBRARIES
                                   LIBZHUYIN_INCLUDE_DIR
+                                  LIBZHUYIN_PKGDATADIR
                                   PC_LIBZHUYIN_FOUND
                                   )
 
