@@ -43,6 +43,5 @@ char* FcitxZhuyinGetUserPath()
     if (fp)
         fclose(fp);
     FcitxXDGGetFileUserWithPrefix("zhuyin", "", NULL, &user_path);
-    FcitxLog(INFO, "Zhuyin storage path %s", user_path);
     return user_path;
 }
