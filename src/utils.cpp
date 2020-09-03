@@ -39,9 +39,10 @@ char* FcitxZhuyinGetSysPath()
 char* FcitxZhuyinGetUserPath()
 {
     char* user_path = NULL;
-    FILE* fp = FcitxXDGGetFileUserWithPrefix("zhuyin", "zhuyin_data/.place_holder", "w", NULL);
+    FILE* fp = FcitxXDGGetFileUserWithPrefix("zhuyin", ".place_holder", "w", NULL);
     if (fp)
         fclose(fp);
-    FcitxXDGGetFileUserWithPrefix("zhuyin", "zhuyin_data", NULL, &user_path);
+    FcitxXDGGetFileUserWithPrefix("zhuyin", "", NULL, &user_path);
+    FcitxLog(INFO, "Zhuyin storage path %s", user_path);
     return user_path;
 }
