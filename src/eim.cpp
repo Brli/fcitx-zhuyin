@@ -725,7 +725,6 @@ void FcitxZhuyinReconfigure(FcitxZhuyinAddonInstance* zhuyinaddon)
         settings |= USE_TONE;
     }
     settings |= IS_PINYIN;
-    settings |= IS_BOPOMOFO;
     if (zhuyinaddon->zhuyin_context) {
         zhuyin_set_options(zhuyinaddon->zhuyin_context, settings);
     }
