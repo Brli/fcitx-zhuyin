@@ -434,7 +434,7 @@ void FcitxZhuyinUpdatePreedit(FcitxZhuyin* zhuyin, char* sentence)
             guint16 pykeyposLen = 0;
             zhuyin_get_zhuyin_key_rest_length(zhuyin->inst, pykeypos, &pykeyposLen);
             gchar* pystring;
-            zhuyin_get_bopomofo_string(zhuyin->inst, pykey, &pystring);
+            zhuyin_get_pinyin_string(zhuyin->inst, pykey, &pystring);
             FcitxMessagesAddMessageAtLast(FcitxInputStateGetPreedit(input), MSG_CODE, "%s", pystring);
 
             if (curoffset + pykeyposLen <= zhuyin->cursor_pos) {
